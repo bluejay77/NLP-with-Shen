@@ -1,0 +1,24 @@
+
+
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 5.10.4)
+Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['dcg_1.pl'].
+% dcg_1.pl compiled 0.00 sec, 3,016 bytes
+true.
+
+?- sentence([the,cat,scares,the,mouse],[]).
+true 
+
+?- sentence([the,cat,scares,the,moon],[]).
+false.
+
+?- halt.
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ 
+
