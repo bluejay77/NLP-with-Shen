@@ -1,0 +1,119 @@
+
+
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 5.10.4)
+Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['earley1.pro'].
+Warning: /home/antti/prolog/earley1.pro:79:
+	Singleton variables: [I]
+Warning: /home/antti/prolog/earley1.pro:97:
+	Singleton variables: [I]
+% earley1.pro compiled 0.01 sec, 8,088 bytes
+true.
+
+?- ['earley.grammar.pro'].
+% earley.grammar.pro compiled 0.00 sec, 3,968 bytes
+true.
+
+?- go.
+|: Antti yesterday debugged the Acer.
+s($,[@,sentence],[0,0])
+s(sentence,[@,noun_phrase,verb_phrase],[0,0])
+s(noun_phrase,[@,determiner,noun],[0,0])
+s(noun_phrase,[@,proper_name],[0,0])
+s(proper_name,[Antti,@],[0,1])
+s(noun_phrase,[proper_name,@],[0,1])
+s(sentence,[noun_phrase,@,verb_phrase],[0,1])
+s(verb_phrase,[@,verb],[1,1])
+s(verb_phrase,[@,verb,noun_phrase],[1,1])
+s(verb_phrase,[@,adverbial_phrase,verb_phrase],[1,1])
+s(adverbial_phrase,[@,time_determiner],[1,1])
+s(time_determiner,[yesterday,@],[1,2])
+s(adverbial_phrase,[time_determiner,@],[1,2])
+s(verb_phrase,[adverbial_phrase,@,verb_phrase],[1,2])
+s(verb_phrase,[@,verb],[2,2])
+s(verb_phrase,[@,verb,noun_phrase],[2,2])
+s(verb_phrase,[@,adverbial_phrase,verb_phrase],[2,2])
+s(verb,[debugged,@],[2,3])
+s(adverbial_phrase,[@,time_determiner],[2,2])
+s(verb_phrase,[verb,@],[2,3])
+s(verb_phrase,[verb,@,noun_phrase],[2,3])
+s(verb_phrase,[adverbial_phrase,verb_phrase,@],[1,3])
+s(noun_phrase,[@,determiner,noun],[3,3])
+s(noun_phrase,[@,proper_name],[3,3])
+s(sentence,[noun_phrase,verb_phrase,@],[0,3])
+s(determiner,[the,@],[3,4])
+s($,[sentence,@],[0,3])
+s(noun_phrase,[determiner,@,noun],[3,4])
+s(noun,[Acer,@],[4,5])
+s(noun_phrase,[determiner,noun,@],[3,5])
+s(verb_phrase,[verb,noun_phrase,@],[2,5])
+s(verb_phrase,[adverbial_phrase,verb_phrase,@],[1,5])
+s(sentence,[noun_phrase,verb_phrase,@],[0,5])
+s($,[sentence,@],[0,5])
+true 
+?- go.
+|: The man today sings.
+s($,[@,sentence],[0,0])
+s(sentence,[@,noun_phrase,verb_phrase],[0,0])
+s(noun_phrase,[@,determiner,noun],[0,0])
+s(noun_phrase,[@,proper_name],[0,0])
+s(determiner,[The,@],[0,1])
+s(noun_phrase,[determiner,@,noun],[0,1])
+s(noun,[man,@],[1,2])
+s(noun_phrase,[determiner,noun,@],[0,2])
+s(sentence,[noun_phrase,@,verb_phrase],[0,2])
+s(verb_phrase,[@,verb],[2,2])
+s(verb_phrase,[@,verb,noun_phrase],[2,2])
+s(verb_phrase,[@,adverbial_phrase,verb_phrase],[2,2])
+s(adverbial_phrase,[@,time_determiner],[2,2])
+s(time_determiner,[today,@],[2,3])
+s(adverbial_phrase,[time_determiner,@],[2,3])
+s(verb_phrase,[adverbial_phrase,@,verb_phrase],[2,3])
+s(verb_phrase,[@,verb],[3,3])
+s(verb_phrase,[@,verb,noun_phrase],[3,3])
+s(verb_phrase,[@,adverbial_phrase,verb_phrase],[3,3])
+s(verb,[sings,@],[3,4])
+s(adverbial_phrase,[@,time_determiner],[3,3])
+s(verb_phrase,[verb,@],[3,4])
+s(verb_phrase,[verb,@,noun_phrase],[3,4])
+s(verb_phrase,[adverbial_phrase,verb_phrase,@],[2,4])
+s(noun_phrase,[@,determiner,noun],[4,4])
+s(noun_phrase,[@,proper_name],[4,4])
+s(sentence,[noun_phrase,verb_phrase,@],[0,4])
+s($,[sentence,@],[0,4])
+true 
+?- go.
+|: The moon today sings.
+s($,[@,sentence],[0,0])
+s(sentence,[@,noun_phrase,verb_phrase],[0,0])
+s(noun_phrase,[@,determiner,noun],[0,0])
+s(noun_phrase,[@,proper_name],[0,0])
+s(determiner,[The,@],[0,1])
+s(noun_phrase,[determiner,@,noun],[0,1])
+true 
+?- go.
+|: The man tomorrow eats the apple.
+s($,[@,sentence],[0,0])
+s(sentence,[@,noun_phrase,verb_phrase],[0,0])
+s(noun_phrase,[@,determiner,noun],[0,0])
+s(noun_phrase,[@,proper_name],[0,0])
+s(determiner,[The,@],[0,1])
+s(noun_phrase,[determiner,@,noun],[0,1])
+s(noun,[man,@],[1,2])
+s(noun_phrase,[determiner,noun,@],[0,2])
+s(sentence,[noun_phrase,@,verb_phrase],[0,2])
+s(verb_phrase,[@,verb],[2,2])
+s(verb_phrase,[@,verb,noun_phrase],[2,2])
+s(verb_phrase,[@,adverbial_phrase,verb_phrase],[2,2])
+s(adverbial_phrase,[@,time_determiner],[2,2])
+true 
+?- halt.
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ 
+

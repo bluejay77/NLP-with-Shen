@@ -1,0 +1,35 @@
+
+
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 5.10.4)
+Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['dcg_semant.pl'].
+% dcg_semant.pl compiled 0.00 sec, 6,016 bytes
+true.
+
+?- sentence(S,[every,man,that,paints,likes,monet],[]).
+S = all(_G315, man(_G315)and paint(_G315)=>like(_G315, monet)) 
+
+?- sentence(S,[a,woman,that,admires,john,paints],[]).
+S = exists(_G315, (woman(_G315)and admire(_G315, john))and paint(_G315)) 
+
+?- sentence(S,[every,woman,that,likes,a,man,that,admires,monet,paints],[]).
+S = all(_G339, woman(_G339)and exists(_G351, (man(_G351)and admire(_G351, monet))and like(_G339, _G351))=>paint(_G339)) 
+
+?- sentence(S,[john,likes,annie],[]).
+S = like(john, annie) 
+
+?- sentence(S,[annie,likes,a,man,that,admires,monet],[]).
+S = exists(_G322, (man(_G322)and admire(_G322, monet))and like(annie, _G322)) 
+
+?- sentence(S,[annie,likes,a,man,that,admire,monet],[]).
+false.
+
+?- halt.
+antti@antti-HP-Compaq-6715s-GR618ES-AK8:~/prolog$ 
