@@ -1,0 +1,46 @@
+
+antti@antti-HP-Compaq-dc7100-SFF-PE271ET:~/Prolog$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['DCG1.pro'].
+true.
+
+?- go.
+|: Antti debugs the Acer.
+
+PARSE SUCCESSFUL
+true 
+?- go.
+|: Antti yesterday debugged the Acer.
+
+PARSE SUCCESSFUL
+true 
+?- go.
+|: Antti debugs the Froob.
+
+false.
+
+?- go.
+|: The man sings.
+
+PARSE SUCCESSFUL
+true 
+?- go.
+|: The man eats the apple.
+
+PARSE SUCCESSFUL
+true 
+?- go.
+|: The man eats the computer.
+
+false.
+
+?- halt.
+antti@antti-HP-Compaq-dc7100-SFF-PE271ET:~/Prolog$
+
